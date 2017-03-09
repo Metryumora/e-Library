@@ -1,0 +1,29 @@
+.download-submit {
+    background-image: url("/../img/down.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 72px;
+    height: 20px;
+    outline: none;
+    overflow: hidden;
+    border: none;
+}
+
+.inputSelect {
+    margin-left: 5px;
+    margin-right: 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    border: 1px solid #AAA;
+    border-radius: 4px;
+    color: #555;
+    font-size: inherit;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
