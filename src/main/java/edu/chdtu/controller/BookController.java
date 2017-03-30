@@ -136,11 +136,14 @@ public class BookController {
     public ModelAndView showThisMonthPopularBooks(ModelMap modelMap) {
         List<Book> books = new ArrayList<>();
         List<Integer> downloads = new ArrayList<>();
-        List<ThisMonthPopular> popularBooks = thisMonthPopularService.getAll();
-        for (ThisMonthPopular book :
-                popularBooks) {
-            books.add(bookService.get(book.getId()));
-            downloads.add(book.getDownloads());
+        List<ThisMonthPopular> popularBooks = new ArrayList<>();
+        popularBooks = thisMonthPopularService.getAll();
+        if (!popularBooks.isEmpty()) {
+            for (ThisMonthPopular book :
+                    popularBooks) {
+                books.add(bookService.get(book.getId()));
+                downloads.add(book.getDownloads());
+            }
         }
         if (UserController.getActiveUser() != null) {
             modelMap.addAttribute("loggedin", true);
@@ -155,11 +158,14 @@ public class BookController {
     public ModelAndView showThisYearPopularBooks(ModelMap modelMap) {
         List<Book> books = new ArrayList<>();
         List<Integer> downloads = new ArrayList<>();
-        List<ThisYearPopular> popularBooks = thisYearPopularService.getAll();
-        for (ThisYearPopular book :
-                popularBooks) {
-            books.add(bookService.get(book.getId()));
-            downloads.add(book.getDownloads());
+        List<ThisYearPopular> popularBooks = new ArrayList<>();
+        popularBooks = thisYearPopularService.getAll();
+        if (!popularBooks.isEmpty()) {
+            for (ThisYearPopular book :
+                    popularBooks) {
+                books.add(bookService.get(book.getId()));
+                downloads.add(book.getDownloads());
+            }
         }
         if (UserController.getActiveUser() != null) {
             modelMap.addAttribute("loggedin", true);
